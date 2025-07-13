@@ -1,0 +1,11 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'asia-south1-docker.pkg.dev/$PROJECT_ID/cloudbuild-repo/cloudbuild-image:latest', '.']
+
+images:
+  - 'asia-south1-docker.pkg.dev/$PROJECT_ID/cloudbuild-repo/cloudbuild-image:latest'
+
+options:
+  logging: LEGACY
+
+logsBucket: 'gs://my-cloudbuild-logs-docker'
